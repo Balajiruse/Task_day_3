@@ -1,0 +1,39 @@
+1.how to compare two json have the same properties without order .
+
+let obj1 = { name: 'balaji', age: 5 };
+let obj2 = { age: 5, name: 'ruse' };
+
+let isEqual = JSON.stringify(obj1) === JSON.stringify(obj2);
+
+console.log(isEqual); 
+
+
+JSON.stringify method convert java script object into json string thats it..
+
+
+2. rest country api
+
+
+let xml=new XMLHttpRequest;
+console.log(xml);
+xml.open("GET","https://restcountries.com/v3.1/all");
+xml.send();
+xml.onload= function (){
+    const data =JSON.parse(xml.response);
+    console.log(data);
+    console.log(xml.status);
+    for(let i=0;i<data.length;i++)
+{
+    console.log(`NAME : ${data[i].name.common}
+    
+FLAG : ${data[i].flags.png}  
+population : ${data[i].population}
+regions : ${data[i].region}
+sub region : ${data[i].subregion}
+`);
+    
+}
+};
+
+
+name ,flag,population,region,sub region...
